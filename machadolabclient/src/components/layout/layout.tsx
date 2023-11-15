@@ -11,7 +11,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     <Link href="/">Movement Data</Link>
                 </section>
             </nav>
-            <section className="flex justify-center w-full h-screen bg-slate-50 pt-8">
+            <section className="flex justify-center w-full h-auto  bg-slate-50 pt-8 pb-8">
                 <div style={{ width: '70%', margin: '2em' }}>
                     {children}
                 </div>

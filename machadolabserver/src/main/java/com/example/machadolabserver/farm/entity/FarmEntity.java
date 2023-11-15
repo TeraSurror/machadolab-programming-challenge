@@ -27,7 +27,7 @@ public class FarmEntity {
     private String farmStreetName;
 
     @Column(name = "farm_city")
-    private String city;
+    private String farmCity;
 
     @Column(name = "farm_state")
     private String farmState;

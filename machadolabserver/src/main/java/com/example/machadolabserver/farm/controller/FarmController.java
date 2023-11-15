@@ -1,5 +1,6 @@
 package com.example.machadolabserver.farm.controller;
 
+import com.example.machadolabserver.farm.dto.FarmDto;
 import com.example.machadolabserver.farm.entity.FarmEntity;
 import com.example.machadolabserver.farm.service.FarmService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ public class FarmController {
     private FarmService farmService;
 
     @GetMapping("/all")
-    public ResponseEntity<List<FarmEntity>> getAllFarmData() {
+    public ResponseEntity<List<FarmDto>> getAllFarmData() {
         return ResponseEntity.ok(farmService.getAllFarmData());
     }
 

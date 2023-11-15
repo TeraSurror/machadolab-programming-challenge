@@ -1,0 +1,21 @@
+import Link from "next/link";
+import React from "react";
+
+export default function Layout({ children }: { children: React.ReactNode }) {
+    return (
+        <div>
+            <nav className="flex justify-between w-full bg-red-700 pl-20 pr-20 pt-4 pb-4">
+                <h4 className="text-slate-200 text-lg font-bold uppercase tracking-wide">Machado Lab Challenge</h4>
+                <section>
+                    <Link href="/">Farms</Link>
+                    <Link href="/">Movement Data</Link>
+                </section>
+            </nav>
+            <section className="flex justify-center w-full">
+                <div style={{ width: '70%', margin: '2em' }}>
+                    {children}
+                </div>
+            </section>
+        </div>
+    )
+}

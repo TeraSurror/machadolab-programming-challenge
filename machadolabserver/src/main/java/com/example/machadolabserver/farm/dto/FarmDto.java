@@ -1,7 +1,6 @@
 package com.example.machadolabserver.farm.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.persistence.Column;
 import lombok.Getter;
 import lombok.Setter;
 

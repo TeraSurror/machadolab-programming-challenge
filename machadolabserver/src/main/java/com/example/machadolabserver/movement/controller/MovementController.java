@@ -1,6 +1,6 @@
 package com.example.machadolabserver.movement.controller;
 
-import com.example.machadolabserver.movement.entity.MovementEntity;
+import com.example.machadolabserver.movement.dto.MovementDto;
 import com.example.machadolabserver.movement.service.MovementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +18,7 @@ public class MovementController {
     private MovementService movementService;
 
     @GetMapping("/all")
-    public ResponseEntity<List<MovementEntity>> getAllMovementData() {
+    public ResponseEntity<List<MovementDto>> getAllMovementData() {
         return ResponseEntity.ok(movementService.getAllMovementData());
     }
 

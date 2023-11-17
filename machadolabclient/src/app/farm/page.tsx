@@ -3,7 +3,9 @@ import FarmTable from "./farm-table";
 
 export default function FarmHome() {
     return (
-        <FarmTable />
+        <Layout>
+            <FarmTable />
+        </Layout>
     );
 
 }

@@ -1,43 +1,30 @@
-# Programming challenge
+## Programming Challenge
 
-## Background
-In food animal systems, animals move to different farms as they age. Each farm has a unique ID and must keep a record of the movement of animals from one farm to another. Here, we present some fictitious records of movements among pig farms.
+### Background
+- This repository contains code for the machado lab programming challenge
+- Please refer to the CHALLENGE.md file for the details of the task.
+- The application consists of 3 parts:
+    - An SPA client built in React.js using the Next.js framework.
+    - An application server written in Spring Boot.
+    - A database - PostgreSQL.
 
-*Description of the data folder* 
+### Instructions to run the project.
+Please make sure you have the following installed:
+    - Maven - 3.6.3
+    - Docker - 24.0.7
 
-*	*movements*: all records of animal movements 
-    -  new_originpremid - column with the ID of the origin farm 
-    -  new_destinationpremid - column with the ID of the destination farm 
-    -  new_numitemsmovedcolumn - column with the number of moved animals
-
-*	*population*: complete list of the farms
-    -  premiseid - column with the ID of the farms
-    -  total_animal - column with the current number of animals for the farm
-
-
-## Challenge
-The challenge is to create a system to visualize the movement records. This
-system have to follow the requirements bellow:
-
-- Has to be composed of 3 components: a REST API, a SPA WEB client, and a
-  relational database;
-- The relational database can be any database that you like, PostgreSQL, MariaDB
-  etc..;
-- The data provided in this repo should be imported into the database;
-- The REST API has to written in Java, Python or Typescript. It can use any
-  framework/library that you desire;
-- The Web Client have to written in Typecript, and you can use any *SPA
-  framework/library* that you desire, ex Angular, React, etc...;
-- Your submitted project should include instructions on how to run it;
-
-The submitted project will be evaluated considering your experience. For example, a
-person with a background in backend development will be evaluated with higher
-expectations of the API and database code. A UI person will be evaluated with
-higher expectations on the design of the UI.
-
-Bonus points will be awarded for creativity and implementing things outside the
-requirements, such as:
-- having an authentication in the system
-- Using docker
-- Having a script to run all components
-- Importing the supplied data into a well normalized schema
+1. Create the docker image for the database
+    - Open a terminal window and cd into the data folder
+    - Run the following command: docker build --tag machadolab-db --file Dockerfile .
+2. Create jar for the spring boot application
+    - Open a terminal window and cd into the machadolabserver folder
+    - Run the command: mvn package -Dmaven.test.skip
+3. Create the docker image for the spring boot application
+    - Open a terminal window and cd into the machadolabserver folder
+    - Run the following command: docker build --tag machadolab-server --file Dockerfile .
+4. Create the docker image for the next application
+    - Open a terminal window and cd into the machadolabclient folder
+    - Run the following command: docker build --tag machadolab-client --file Dockerfile .
+5. Run the application using compose
+    - Open terminal and cd into the root folder of the project
+    - Run the command: docker compose up

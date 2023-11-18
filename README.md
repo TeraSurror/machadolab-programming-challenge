@@ -18,8 +18,9 @@ Please make sure no applications or processes are running on the following ports
 - 8080
 
 #### Run with docker compose
-1. cd into the project directory
-2. Run the command: `docker compose up --build`
+1. cd into the project directory.
+2. Run the command: `docker compose up --build`.
+3. Open http://localhost:3000 on a webbrowser to see the application.
 
 ### Notes:
 - The data provided in the csv files have been imported into the database into normalized schemas.

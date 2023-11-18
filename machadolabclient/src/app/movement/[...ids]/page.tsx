@@ -27,6 +27,8 @@ export default async function MovementMapHome({ params }: { params: { ids: strin
                     long1={parseFloat(farmData[0].farm_longitude)}
                     lat2={parseFloat(farmData[1].farm_latitude)}
                     long2={parseFloat(farmData[1].farm_longitude)}
+                    farmName1={farmData[0].farm_name}
+                    farmName2={farmData[1].farm_name}
                 />
                 <div className='ml-8 bg-white shadow-md p-10 pr-16'>
                     <h3 className='text-xl font-bold'>Movement Details</h3>
@@ -42,6 +44,7 @@ export default async function MovementMapHome({ params }: { params: { ids: strin
                         <p>{`Name: ${farmData[1].farm_name}`}</p>
                         <p>{`Premise ID: ${farmData[1].farm_prem_id}`}</p>
                     </div>
+                    <br />
                 </div>
 
             </div>

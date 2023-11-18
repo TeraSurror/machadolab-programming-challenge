@@ -11,8 +11,8 @@ import { Icon, LatLngExpression } from 'leaflet';
 import "leaflet/dist/leaflet.css";
 
 export default function MovementMap({
-    lat1, long1, lat2, long2
-}: { lat1: number, long1: number, lat2: number, long2: number }) {
+    lat1, long1, lat2, long2, farmName1, farmName2
+}: { lat1: number, long1: number, lat2: number, long2: number, farmName1: string, farmName2: string }) {
 
     const positions: LatLngExpression[] = [
         { lat: lat1, lng: long1 },
@@ -34,7 +34,7 @@ export default function MovementMap({
                 icon={new Icon({ iconUrl: "/marker.png", iconSize: [25, 41], iconAnchor: [12, 41] })}
             >
                 <Popup>
-                    A pretty CSS3 popup. <br /> Easily customizable.
+                    {`Farm Name: ${farmName1}`}
                 </Popup>
             </Marker>
             <Marker
@@ -42,7 +42,7 @@ export default function MovementMap({
                 icon={new Icon({ iconUrl: "/marker.png", iconSize: [25, 41], iconAnchor: [12, 41] })}
             >
                 <Popup>
-                    A pretty CSS3 popup. <br /> Easily customizable.
+                    {`Farm Name: ${farmName2}`}
                 </Popup>
             </Marker>
             <Polyline pathOptions={options} positions={positions} />

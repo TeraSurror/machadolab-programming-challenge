@@ -10,7 +10,6 @@
 
 ### Instructions to run the project.
 Please make sure you have the following installed:
-- Maven - 3.6.3
 - Docker - 24.0.7
 
 Please make sure no applications or processes are running on the following ports
@@ -18,23 +17,9 @@ Please make sure no applications or processes are running on the following ports
 - 5432
 - 8080
 
-1. Create the docker image for the database
-    - Open a terminal window and cd into the data folder
-    - Run the following command: `docker build --tag machadolab-db --file Dockerfile .`
-2. Create jar for the spring boot application
-    - Open a terminal window and cd into the machadolabserver folder
-    - Run the command: `mvn package -Dmaven.test.skip`
-3. Create the docker image for the spring boot application
-    - Open a terminal window and cd into the machadolabserver folder
-    - Run the following command: `docker build --tag machadolab-server --file Dockerfile .`
-4. Create the docker image for the next application
-    - Open a terminal window and cd into the machadolabclient folder
-    - Run the following command: `docker build --tag machadolab-client --file Dockerfile .`
-5. Run the application using compose
-    - Open terminal and cd into the root folder of the project
-    - Run the command: `docker compose up`
-    - Open http://localhost:3000 in a browser window to see the application
-
+#### Run with docker compose
+1. cd into the project directory
+2. Run the command: `docker compose up --build`
 
 ### Notes:
 - The data provided in the csv files have been imported into the database into normalized schemas.

@@ -1,19 +1,22 @@
 version: "3.0"
 services:
   postgres:
-    image: machadolab-db
+    build:
+      context: ./data
     ports:
       - "5432:5432"
 
   spring-boot-app:
-    image: machadolab-server
+    build:
+      context: ./machadolabserver
     ports:
       - "8080:8080"
     depends_on:
       - postgres
 
   nextjs-ui:
-    image: machadolab-client
+    build:
+      context: ./machadolabclient
     ports:
       - "3000:3000"
     depends_on:

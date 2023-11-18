@@ -13,6 +13,11 @@ Please make sure you have the following installed:
 - Maven - 3.6.3
 - Docker - 24.0.7
 
+Please make sure no applications or processes are running on the following ports
+- 3000
+- 5432
+- 8080
+
 1. Create the docker image for the database
     - Open a terminal window and cd into the data folder
     - Run the following command: `docker build --tag machadolab-db --file Dockerfile .`
@@ -29,3 +34,8 @@ Please make sure you have the following installed:
     - Open terminal and cd into the root folder of the project
     - Run the command: `docker compose up`
     - Open http://localhost:3000 in a browser window to see the application
+
+
+### Notes:
+- The data provided in the csv files have been imported into the database into normalized schemas.
+- There is normalize.py script available in the data directory. This script can be run to convert the given csv files to normalized data. This data can then be imported into the database.

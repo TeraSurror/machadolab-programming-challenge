@@ -5,7 +5,7 @@
 - Please refer to the CHALLENGE.md file for the details of the task.
 - The application consists of 3 parts:
     - An SPA client built in React.js using the Next.js framework.
-    - An application server written in Spring Boot.
+    - A REST API written in Spring Boot.
     - A database - PostgreSQL.
 
 ### Instructions to run the project.
@@ -28,3 +28,4 @@ Please make sure you have the following installed:
 5. Run the application using compose
     - Open terminal and cd into the root folder of the project
     - Run the command: docker compose up
+    - Open http://localhost:3000 in a browser window to see the application
